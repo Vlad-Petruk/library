@@ -7,11 +7,39 @@
     <title>Book Library</title>
 </head>
 <body>
-    <div class="main-contaner">
+    <div class="main-container">
         <h1>My Book library</h1>
+        <button type="button" class="add-book">NEW BOOK</button>
         <div class="books">
             
         </div>
+        <dialog id = 'bookDial'>
+            <h2>Fill all information about the book</h2>
+            <form>
+                <div>
+                    <label for="book-title">Book title:</label>
+                    <input type="text" id="book-title" name="book-title">
+                    <br>
+
+                    <label for="book-author">Book author:</label>
+                    <input type="text" id="book-author" name="book-author">
+                    <br>
+
+                    <label for="book-pages">Book pages:</label>
+                    <input type="text" id="book-pages" name="book-pages">
+                    <br>
+
+                    <label for="book-read">Book read:</label>
+                    <input type="text" id="book-read" name="book-read">
+                    <br>
+                </div>
+                <div>
+                    <button value="cancel" formmethod="dialog">Cancel</button>
+                    <button id="confirmBtn" value="default">Confirm</button>
+                </div>
+            </form>
+        </dialog>
+        
     </div>
     <script src="main.js"></script>
 </body>
