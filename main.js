@@ -44,6 +44,9 @@ function Book(title,author,pages,read){
 
 newBookBtn.addEventListener("click", () => {
     inputTitle.value = '';
+    inputAuthor.value = '';
+    inputPages.value = '';
+    inputRead.value = '';
     bookDial.showModal();
   });
   
