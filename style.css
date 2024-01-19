@@ -79,3 +79,11 @@ input{
     left: 40%;
     margin: 15px auto;
 }
+
+#book-read{
+    position: fixed;
+    left: 40%;
+    margin: 15px auto;
+    width: 400px;
+    height: 30px;
+}

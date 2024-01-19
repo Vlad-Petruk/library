@@ -15,18 +15,18 @@ let userPages = "";
 let userRead = "";
 
 const myLibrary = [
-  // {
-  //     title: 'A Game of Thrones',
-  //     author: 'George R. R. Martin',
-  //     pages: '694',
-  //     read: 'Yes'
-  // },
-  // {
-  //     title: 'The Blade Itself',
-  //     author: 'Joe Abercrombie',
-  //     pages: '529',
-  //     read: 'Yes'
-  // }
+  {
+    title: "A Game of Thrones",
+    author: "George R. R. Martin",
+    pages: "694",
+    read: "Yes",
+  },
+  {
+    title: "The Blade Itself",
+    author: "Joe Abercrombie",
+    pages: "529",
+    read: "Yes",
+  },
 ];
 
 class Book {
@@ -62,22 +62,23 @@ inputPages.addEventListener("input", (e) => {
 });
 
 inputRead.addEventListener("input", (e) => {
+    console.log(inputRead.value)
   userRead = inputRead.value;
 });
 
 confirmBtn.addEventListener("click", (event) => {
-//   event.preventDefault();
-  const book = new Book(userTitle, userAuthor, userPages, userRead);
-  myLibrary.push(book);
-  displayLibrary();
-  // addBookToLibrary()
-  bookDial.close();
-});
+    event.preventDefault();
 
-// function addBookToLibrary(){
-// const book = new Book (userTitle,userAuthor,userPages,userRead)
-// myLibrary.push(book)
-// }
+    // Check if all required fields are filled
+    if (userTitle && userAuthor && userPages && userRead) {
+        const book = new Book(userTitle, userAuthor, userPages, userRead);
+        myLibrary.push(book);
+        displayLibrary();
+        bookDial.close();
+    } else {
+        alert("Please fill in all required fields.");
+    }
+});
 
 function removeBook(index) {
   myLibrary.splice(index, 1);
@@ -115,7 +116,7 @@ function displayLibrary() {
     bookCard.append(removeBtn);
     bookCard.append(togleReadBtn);
 
-    title.innerHTML = `Book title: ${book.title}`;
+    title.innerHTML = `Book title: "${book.title}"`;
     author.innerHTML = `Author: ${book.author}`;
     pages.innerHTML = `Number of pages: ${book.pages}`;
     read.innerHTML = `Read status: ${book.hasRead ? "Yes" : "No"}`;
@@ -128,3 +129,5 @@ function displayLibrary() {
     });
   });
 }
+
+displayLibrary();
