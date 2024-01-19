@@ -66,7 +66,7 @@ inputRead.addEventListener("input", (e) => {
 });
 
 confirmBtn.addEventListener("click", (event) => {
-  event.preventDefault();
+//   event.preventDefault();
   const book = new Book(userTitle, userAuthor, userPages, userRead);
   myLibrary.push(book);
   displayLibrary();
